@@ -9,3 +9,9 @@ services:
     ports:
       - "7755:7755"
     restart: always
+
+  test:
+    build: .
+    command: bash test.sh
+    volumes:
+      - .:/app

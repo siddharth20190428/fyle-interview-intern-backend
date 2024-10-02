@@ -21,3 +21,9 @@ RUN chmod +x run.sh
 
 # Run the run.sh file when the container starts
 CMD ["bash", "run.sh"]
+
+# Copy the test.sh file
+COPY test.sh /test.sh
+
+# Make the test.sh file executable
+RUN chmod +x test.sh
