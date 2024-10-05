@@ -27,3 +27,9 @@ COPY test.sh /test.sh
 
 # Make the test.sh file executable
 RUN chmod +x test.sh
+
+# Copy the coverage.sh file
+COPY coverage.sh /coverage.sh
+
+# Make the coverage.sh file executable
+RUN chmod +x coverage.sh

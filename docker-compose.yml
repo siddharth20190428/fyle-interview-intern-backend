@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  web:
+  backend:
     build: .
     command: bash run.sh
     volumes:
@@ -13,5 +13,11 @@ services:
   test:
     build: .
     command: bash test.sh
+    volumes:
+      - .:/app
+
+  coverage:
+    build: .
+    command: bash coverage.sh
     volumes:
       - .:/app
