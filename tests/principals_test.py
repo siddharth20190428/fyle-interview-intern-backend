@@ -60,3 +60,9 @@ def test_regrade_assignment(client, h_principal):
 
     assert response.json['data']['state'] == AssignmentStateEnum.GRADED.value
     assert response.json['data']['grade'] == GradeEnum.B
+
+def test_list_teachers(client, h_principal):
+    response = client.get('/principal/teachers', headers=h_principal)
+    assert response.status_code == 200
+    data = response.json['data']
+    assert len(data) > 0  # Assuming there are teachers in the database
